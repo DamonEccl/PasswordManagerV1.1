@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
 
@@ -24,7 +25,7 @@ public class Controller extends Application {
             Parent root = loader.load();
 
             Scene scene = new Scene(root, 640, 400);
-            stage.setTitle("Login Page");
+            stage.setTitle("Login");
             stage.setScene(scene);
             stage.show();
         }
@@ -35,20 +36,30 @@ public class Controller extends Application {
         }
     }
 
-    public static void main(String[] args) {
-        launch(args);
-    }
+
 
     @FXML
     private PasswordField passwordBox;
 
     @FXML
+    private Label incorrect;
+
+
+    @FXML
     public void handleButtonAction(ActionEvent event) {
         if (passwordBox.getLength() > 7){
             System.out.println("Works");
+            incorrect.setVisible(false);
         }
         else{
             System.out.println("Failed");
+            incorrect.setVisible(true);
         }
     }
+
+    public static void main(String[] args) {
+        launch(args);
+
+    }
+
 }
