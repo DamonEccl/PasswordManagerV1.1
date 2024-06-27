@@ -47,9 +47,11 @@ public class Controller extends Application {
 
     @FXML
     public void handleButtonAction(ActionEvent event) {
-        if (passwordBox.getLength() > 7){
+        if (Backend.Authenticate(passwordBox.getText())){
             System.out.println("Works");
             incorrect.setVisible(false);
+            System.out.println(passwordBox.getText());
+
         }
         else{
             System.out.println("Failed");
@@ -58,6 +60,7 @@ public class Controller extends Application {
     }
 
     public static void main(String[] args) {
+        Backend.Setup();
         launch(args);
 
     }
