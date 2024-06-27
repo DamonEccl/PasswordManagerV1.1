@@ -32,7 +32,7 @@ public class Backend {
         }
     }
     public static boolean Authenticate(String password){
-        password = Encryption.decode(password);
+        password = Encryption.encode(password);
         System.out.println(password);
 
         if (password.equals(firstLine)){
