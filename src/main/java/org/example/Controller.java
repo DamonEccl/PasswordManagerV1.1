@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -15,8 +16,6 @@ import javafx.event.ActionEvent;
 import java.io.IOException;
 
 public class Controller extends Application {
-
-
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -35,14 +34,13 @@ public class Controller extends Application {
 
 
             stage.setTitle("Passwork Keeper");
-            //stage.setResizable(false);
+            stage.setResizable(false);
+            stage.getIcons().add(new Image("icon.png"));
             stage.setScene(scene);
             stage.show();
 
 
     }
-
-
 
     public static void main(String[] args) throws IOException {
         launch(args);
