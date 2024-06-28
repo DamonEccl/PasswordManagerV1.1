@@ -12,6 +12,8 @@ import javafx.stage.Stage;
 
 import javafx.event.ActionEvent;
 
+import java.io.IOException;
+
 public class Controller extends Application {
 
 
@@ -20,9 +22,16 @@ public class Controller extends Application {
     public void start(Stage stage) throws Exception {
 
             var scene = new Scene(new Pane());
+        ViewSwitcher.setScene(scene);
 
-            ViewSwitcher.setScene(scene);
-            ViewSwitcher.switchTo(View.LOGIN);
+            if (!Backend.Setup()) {
+                ViewSwitcher.switchTo(View.LOGIN);
+            }
+            else{
+                ViewSwitcher.switchTo(View.SIGNUP);
+            }
+
+
             stage.setScene(scene);
             stage.show();
 
@@ -31,10 +40,8 @@ public class Controller extends Application {
 
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         launch(args);
-        //Backend.Setup();
-
     }
 
 }

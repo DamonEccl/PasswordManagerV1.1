@@ -42,19 +42,19 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.SignupController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS" />
       <Pane prefHeight="378.0" prefWidth="640.0" style="-fx-background-color: WHITE;" />
       <Pane prefHeight="811.0" prefWidth="640.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#616161" height="400.0" stroke="BLACK" strokeType="INSIDE" width="641.0" />
-            <Button layoutX="260.0" layoutY="275.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: GREY;" text="Create" textFill="WHITE">
+            <Button layoutX="260.0" layoutY="275.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: GREY;" text="Create" textFill="WHITE" onAction="#handleButtonAction">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <PasswordField layoutX="226.0" layoutY="159.0" prefHeight="25.0" prefWidth="159.0" promptText="🔑" style="-fx-background-color: grey;">
+            <PasswordField id="firstPass" layoutX="226.0" layoutY="159.0" prefHeight="25.0" prefWidth="159.0" promptText="🔑" style="-fx-background-color: grey;">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
@@ -69,17 +69,17 @@
                   <Font size="39.0" />
                </font>
             </Label>
-            <Label fx:id="incorrect" layoutX="246.0" layoutY="241.0" text="Password doesn't match" textFill="#da5c5c">
+            <Label fx:id="incorrect" layoutX="246.0" layoutY="241.0" text="Password doesn't match" textFill="#da5c5c" visible="false">
                <font>
                   <Font name="Calibri" size="12.0" />
                </font>
             </Label>
-            <PasswordField layoutX="226.0" layoutY="200.0" prefHeight="25.0" prefWidth="159.0" promptText="Confirm password" style="-fx-background-color: grey;">
+            <PasswordField id="confirm" layoutX="226.0" layoutY="200.0" prefHeight="25.0" prefWidth="159.0" promptText="Confirm password" style="-fx-background-color: grey;">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
             </PasswordField>
-            <Label fx:id="incorrect1" layoutX="263.0" layoutY="241.0" text="Password created" textFill="#40c340">
+            <Label fx:id="correct" layoutX="263.0" layoutY="241.0" text="Password created" textFill="#40c340" visible="false">
                <font>
                   <Font name="Calibri" size="12.0" />
                </font>

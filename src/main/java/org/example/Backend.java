@@ -11,7 +11,7 @@ public class Backend {
 
     public static String firstLine = "";
 
-    public static void Setup(){
+    public static boolean Setup(){
         File file = new File("src/main/java/org/example/data.txt");
 
         try {
@@ -20,16 +20,20 @@ public class Backend {
             try{
 
                 firstLine = scanner.nextLine();
+                return false;
             }
             catch (NoSuchElementException e){
                 SignupController.onSignup();
+                return true;
             }
 
-
-            scanner.close();
+            finally {
+                scanner.close();
+            }
         }
         catch (IOException e) {
             System.out.println("Thats not good... FILE NOT FOUND");
+            return true;
         }
     }
     public static boolean Authenticate(String password){
