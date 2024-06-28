@@ -30,13 +30,24 @@ public class SignupController {
     private Label correct;
 
     @FXML
-    public void handleButtonAction(ActionEvent event) {
-        if (firstPass.getText().equals(confirm.getText()) && firstPass.getText() != null && confirm.getText() != null ){
-            correct.setVisible(true);
-        }
-        else{
-            correct.setVisible(false);
+    public void handleButtonAction(ActionEvent event) throws IOException {
+
+        String first = firstPass.getText();
+        String confirmed = confirm.getText();
+
+        System.out.println(first + " " + confirmed);
+
+        if (!first.isEmpty() && !confirmed.isEmpty()) {
+            if (first.equals(confirmed)) {
+                correct.setVisible(true);
+                Backend.setPassword(first);
+                passKeeperController.onPassKeeper();
+            } else {
+                incorrect.setVisible(true);
+            }
         }
     }
+
+
 
 }

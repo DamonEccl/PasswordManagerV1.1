@@ -21,8 +21,10 @@ public class Controller extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-            var scene = new Scene(new Pane());
+        var scene = new Scene(new Pane());
         ViewSwitcher.setScene(scene);
+        ViewSwitcher.setStage(stage);
+        stage.sizeToScene();
 
             if (!Backend.Setup()) {
                 ViewSwitcher.switchTo(View.LOGIN);
@@ -32,6 +34,8 @@ public class Controller extends Application {
             }
 
 
+            stage.setTitle("Passwork Keeper");
+            //stage.setResizable(false);
             stage.setScene(scene);
             stage.show();
 

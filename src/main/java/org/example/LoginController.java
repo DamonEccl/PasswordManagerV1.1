@@ -21,11 +21,13 @@ public class LoginController {
 
 
     @FXML
-    public void handleButtonAction(ActionEvent event) {
+    public void handleButtonAction(ActionEvent event) throws IOException {
         if (Backend.Authenticate(passwordBox.getText())){
             System.out.println("Works");
             incorrect.setVisible(false);
             System.out.println(passwordBox.getText());
+            Log.LoggedIn();
+            passKeeperController.onPassKeeper();
 
         }
         else{

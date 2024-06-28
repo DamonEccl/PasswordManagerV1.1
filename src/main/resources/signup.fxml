@@ -54,7 +54,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <PasswordField id="firstPass" layoutX="226.0" layoutY="159.0" prefHeight="25.0" prefWidth="159.0" promptText="🔑" style="-fx-background-color: grey;">
+            <PasswordField fx:id="firstPass" layoutX="226.0" layoutY="159.0" prefHeight="25.0" prefWidth="159.0" promptText="🔑" style="-fx-background-color: grey;">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
@@ -74,7 +74,7 @@
                   <Font name="Calibri" size="12.0" />
                </font>
             </Label>
-            <PasswordField id="confirm" layoutX="226.0" layoutY="200.0" prefHeight="25.0" prefWidth="159.0" promptText="Confirm password" style="-fx-background-color: grey;">
+            <PasswordField fx:id="confirm" layoutX="226.0" layoutY="200.0" prefHeight="25.0" prefWidth="159.0" promptText="Confirm password" style="-fx-background-color: grey;">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
