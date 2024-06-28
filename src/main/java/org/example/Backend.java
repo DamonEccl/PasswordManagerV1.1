@@ -2,6 +2,7 @@ package org.example;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
@@ -21,13 +22,13 @@ public class Backend {
                 firstLine = scanner.nextLine();
             }
             catch (NoSuchElementException e){
-
+                SignupController.onSignup();
             }
 
 
             scanner.close();
         }
-        catch (FileNotFoundException e) {
+        catch (IOException e) {
             System.out.println("Thats not good... FILE NOT FOUND");
         }
     }
