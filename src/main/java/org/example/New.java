@@ -29,7 +29,7 @@ public class New {
         String newPane = "<Pane layoutX=\"84.0\" layoutY=\"44.0\" prefHeight=\"97.0\" prefWidth=\"472.0\">\n" +
                 "                                 <children>\n" +
                 "                                    <Rectangle arcHeight=\"15.0\" arcWidth=\"15.0\" fill=\"#202225\" height=\"96.0\" opacity=\"0.76\" stroke=\"#e1e1e1\" strokeLineCap=\"ROUND\" strokeWidth=\"0.0\" width=\"471.0\" />\n" +
-                "                                    <Label layoutX=\"14.0\" layoutY=\"9.0\" text=\"Gmail\" textFill=\"#bcbcbc\">\n" +
+                "                                    <Label layoutX=\"14.0\" layoutY=\"9.0\" text=\"" + this.user + "\" textFill=\"#bcbcbc\">\n" +
                 "                                       <font>\n" +
                 "                                          <Font name=\"Calibri Bold\" size=\"20.0\" />\n" +
                 "                                       </font>\n" +
@@ -44,7 +44,7 @@ public class New {
                 "                                          <Font name=\"Calibri\" size=\"18.0\" />\n" +
                 "                                       </font>\n" +
                 "                                    </Label>\n" +
-                "                                    <Label layoutX=\"132.0\" layoutY=\"66.0\" text=\"**********\" textFill=\"#b9b9b9\">\n" +
+                "                                    <Label layoutX=\"132.0\" layoutY=\"66.0\" text=\" " + this.password + "\" textFill=\"#b9b9b9\">\n" +
                 "                                       <font>\n" +
                 "                                          <Font name=\"Calibri\" size=\"18.0\" />\n" +
                 "                                       </font>\n" +
@@ -52,7 +52,7 @@ public class New {
                 "                                          <Cursor fx:constant=\"TEXT\" />\n" +
                 "                                       </cursor>\n" +
                 "                                    </Label>\n" +
-                "                                    <Label layoutX=\"132.0\" layoutY=\"38.0\" text=\"Example@gmail.com\" textFill=\"#b2b2b2\">\n" +
+                "                                    <Label layoutX=\"132.0\" layoutY=\"38.0\" text=\"" + this.user + "\" textFill=\"#b2b2b2\">\n" +
                 "                                       <font>\n" +
                 "                                          <Font name=\"Calibri\" size=\"18.0\" />\n" +
                 "                                       </font>\n" +

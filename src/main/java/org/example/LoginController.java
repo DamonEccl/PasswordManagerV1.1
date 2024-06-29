@@ -1,13 +1,18 @@
 package org.example;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 
 import java.io.IOException;
 
 public class LoginController {
+
+
 
     public static void onLogin() throws IOException {
         ViewSwitcher.switchTo(View.LOGIN);
@@ -35,4 +40,19 @@ public class LoginController {
             incorrect.setVisible(true);
         }
     }
+
+
+    private EventHandler<KeyEvent> keyAction = new EventHandler<KeyEvent>() {
+        @Override
+        public void handle(KeyEvent keyEvent) {
+            if (keyEvent.getCode() == KeyCode.ENTER){
+                try {
+                    handleButtonAction(new ActionEvent());
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
+    };
+
 }
