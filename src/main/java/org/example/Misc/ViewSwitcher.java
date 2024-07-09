@@ -1,8 +1,7 @@
-package org.example;
+package org.example.Misc;
 
 // Credits to Almas for the file switcher logic https://www.youtube.com/watch?v=DUpQGpHsRMg&ab_channel=AlmasBaimagambetov
 
-import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;

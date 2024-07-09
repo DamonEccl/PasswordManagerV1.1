@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Controllers;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -7,6 +7,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import org.example.Backend.Backend;
+import org.example.Backend.EncryptionV2;
+import org.example.Backend.Log;
+import org.example.Misc.View;
+import org.example.Misc.ViewSwitcher;
 
 import java.io.IOException;
 

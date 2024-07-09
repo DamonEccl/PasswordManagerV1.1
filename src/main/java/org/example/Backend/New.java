@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Backend;
 
 public class New {
 
@@ -11,24 +11,24 @@ public class New {
     String password;
     String name;
     String user;
+    String heightIncrease;
 
     public New(String password, String name, String user){
         this.password = password;
         this.name = name;
         this.user = name;
+        this.heightIncrease = getPreviousHeight();
     }
 
-    public void Create(String pass, String nam, String userName){
-        this.password = pass;
-        this.name = nam;
-        this.user = userName;
+    public static void Create(New newPane){
 
-        InsertNewPass();
+        System.out.println(newPane.heightIncrease);
+
     }
 
     public void InsertNewPass(){
 
-        String newPane = "<Pane layoutX=\"84.0\" layoutY=\"44.0\" prefHeight=\"97.0\" prefWidth=\"472.0\">\n" +
+        String newPane = "<Pane layoutX=\"84.0\" layoutY=\" " + heightIncrease + "\" prefHeight=\"97.0\" prefWidth=\"472.0\">\n" +
                 "                                 <children>\n" +
                 "                                    <Rectangle arcHeight=\"15.0\" arcWidth=\"15.0\" fill=\"#202225\" height=\"96.0\" opacity=\"0.76\" stroke=\"#e1e1e1\" strokeLineCap=\"ROUND\" strokeWidth=\"0.0\" width=\"471.0\" />\n" +
                 "                                    <Label layoutX=\"14.0\" layoutY=\"9.0\" text=\"" + this.user + "\" textFill=\"#bcbcbc\">\n" +
@@ -90,13 +90,35 @@ public class New {
                 "                              </Pane>";
     }
 
-    public static void getPreviousHeight(){
+    public String getPreviousHeight(){
+        String temp = "";
+        for (int i = 0; i < passKeeper.length; i++){
+            if (passKeeper[i].contains("<Pane ") && !passKeeper[i].contains("Infinity")){
+
+                int startIndex = passKeeper[i].indexOf("layoutY=\"");
+                int endIndex = passKeeper[i].indexOf("\" prefHeight");
+
+                if (startIndex != -1 && endIndex != -1 && startIndex < endIndex) {
+                    temp = passKeeper[i].substring(startIndex + 9, endIndex);
+
+                }
+
+            }
+        }
+
+        String height = (Double.parseDouble(temp) + 50.0) + "";
+        System.out.println(height);
+
+
+        return height;
+
 
     }
 
     public static void setPassKeeper(String[] tempKeeper){
         passKeeper = tempKeeper;
     }
+
 
 
 }

@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Misc;
 
 public enum View {
     LOGIN("/login.fxml"),

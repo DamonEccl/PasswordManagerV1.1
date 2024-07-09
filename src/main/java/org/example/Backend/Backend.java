@@ -1,5 +1,7 @@
-package org.example;
+package org.example.Backend;
 
+
+import org.example.Controllers.SignupController;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -14,6 +16,7 @@ public class Backend {
 
     public static String[] passKeeper;
     public static String firstLine = "";
+    public static String heightIncrease;
 
     public static boolean Setup(){
         File file = new File("src/main/resources/data.txt");
@@ -53,7 +56,6 @@ public class Backend {
 
                 while(scanner.hasNext()){
                     tempKeeper.add(scanner.nextLine());
-                    System.out.println(i);
                     i++;
 
                 }
@@ -73,9 +75,14 @@ public class Backend {
 
         passKeeper = tempKeeper.toArray(String[]::new);
 
-        for (String line : passKeeper) {
-            System.out.println(line);
-        }
+        New.setPassKeeper(passKeeper);
+        New newItem = new New("Testing", "User", "Example");
+
+        New.Create(newItem);
+
+
+
+
 
     }
 

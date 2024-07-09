@@ -1,11 +1,12 @@
-package org.example;
+package org.example.Controllers;
 
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
-import javafx.stage.Stage;
+import org.example.Backend.Backend;
+import org.example.Misc.View;
+import org.example.Misc.ViewSwitcher;
 
 import java.io.IOException;
 
