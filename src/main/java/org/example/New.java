@@ -2,6 +2,8 @@ package org.example;
 
 public class New {
 
+    public static String[] passKeeper;
+
     public New(){
 
     }
@@ -90,6 +92,10 @@ public class New {
 
     public static void getPreviousHeight(){
 
+    }
+
+    public static void setPassKeeper(String[] tempKeeper){
+        passKeeper = tempKeeper;
     }
 
 

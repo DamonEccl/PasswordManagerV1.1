@@ -93,7 +93,7 @@ public class Encryption {
 
     }
 
-    public static String encode(String word){
+    public static String Encode(String word){
         String encode = "";
 
         loadLetters();
@@ -121,8 +121,9 @@ public class Encryption {
         return encode;
     }
 
-    public static String decode(String word){
+    public static String Decode(String word){
         String decode = "";
+
 
         loadLetters();
 

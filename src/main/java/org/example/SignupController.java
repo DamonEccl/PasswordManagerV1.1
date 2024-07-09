@@ -43,6 +43,7 @@ public class SignupController {
                 if (first.equals(confirmed)) {
                     correct.setVisible(true);
                     Backend.setPassword(first);
+                    Backend.Reader();
                     passKeeperController.onPassKeeper();
                 }
                 else {

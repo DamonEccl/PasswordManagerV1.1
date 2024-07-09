@@ -1,20 +1,18 @@
 package org.example;
 
-import com.sun.glass.ui.Pixels;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.time.DayOfWeek;
-import java.util.Calendar;
+import java.util.ArrayList;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 
 public class Backend {
 
+
+    public static String[] passKeeper;
     public static String firstLine = "";
 
     public static boolean Setup(){
@@ -24,7 +22,6 @@ public class Backend {
             Scanner scanner = new Scanner(file);
 
             try{
-
                 firstLine = scanner.nextLine();
                 return false;
             }
@@ -42,8 +39,48 @@ public class Backend {
             return true;
         }
     }
+
+    public static void Reader(){
+        File file = new File("src/main/resources/passwordKeeper.fxml");
+        ArrayList<String> tempKeeper = new ArrayList<>();
+
+        try {
+            Scanner scanner = new Scanner(file);
+
+            try{
+
+                int i = 0;
+
+                while(scanner.hasNext()){
+                    tempKeeper.add(scanner.nextLine());
+                    System.out.println(i);
+                    i++;
+
+                }
+
+            }
+            catch (NoSuchElementException e){
+                System.out.println("Error.. Problem with fxml file");
+            }
+
+            finally {
+                scanner.close();
+            }
+        }
+        catch (IOException e) {
+            System.out.println("Thats not good... FILE NOT FOUND");
+        }
+
+        passKeeper = tempKeeper.toArray(String[]::new);
+
+        for (String line : passKeeper) {
+            System.out.println(line);
+        }
+
+    }
+
     public static boolean Authenticate(String password){
-        password = Encryption.encode(password);
+        password = Encryption.Encode(password);
         System.out.println(password);
 
         if (password.equals(firstLine)){
@@ -53,7 +90,7 @@ public class Backend {
     }
 
     public static void setPassword(String password){
-        password = Encryption.encode(password);
+        password = Encryption.Encode(password);
         File file = new File("src/main/resources/data.txt");
         File log = new File("src/main/resources/log.txt");
         try {
