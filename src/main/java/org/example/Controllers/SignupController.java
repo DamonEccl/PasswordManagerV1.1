@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.scene.layout.Pane;
 import org.example.Backend.Backend;
 import org.example.Misc.View;
 import org.example.Misc.ViewSwitcher;
@@ -83,6 +84,7 @@ public class SignupController {
         }
         return 0;
     }
+
 
 
 

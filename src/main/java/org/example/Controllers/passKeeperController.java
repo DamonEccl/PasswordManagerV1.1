@@ -1,5 +1,8 @@
 package org.example.Controllers;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.layout.Pane;
 import org.example.Misc.View;
 import org.example.Misc.ViewSwitcher;
 
@@ -11,5 +14,13 @@ public class passKeeperController {
         ViewSwitcher.switchTo(View.MAIN);
     }
 
+    @FXML
+    private Pane addPane;
 
+
+
+    @FXML
+    public void addEvent(ActionEvent actionEvent) {
+        addPane.setVisible(true);
+    }
 }

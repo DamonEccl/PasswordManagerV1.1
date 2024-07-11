@@ -87,13 +87,15 @@ public class New {
                 "                                       </cursor>\n" +
                 "                                    </Button>\n" +
                 "                                 </children>\n" +
-                "                              </Pane>";
+                "                              </Pane>\n";
     }
 
     public String getPreviousHeight(){
         String temp = "";
+        String newAdd = "";
+
         for (int i = 0; i < passKeeper.length; i++){
-            if (passKeeper[i].contains("<Pane ") && !passKeeper[i].contains("Infinity")){
+            if (passKeeper[i].contains("<Pane ") && !passKeeper[i].contains("Infinity") && !passKeeper[i].contains("fx")){
 
                 int startIndex = passKeeper[i].indexOf("layoutY=\"");
                 int endIndex = passKeeper[i].indexOf("\" prefHeight");
@@ -104,10 +106,16 @@ public class New {
                 }
 
             }
+
+            if (passKeeper[i].contains("<!-- Add  -->")){
+                System.out.println("$ " + i + " " + passKeeper[i]);
+                newAdd += (i-1);
+            }
         }
 
         String height = (Double.parseDouble(temp) + 50.0) + "";
         System.out.println(height);
+        System.out.println(newAdd);
 
 
         return height;

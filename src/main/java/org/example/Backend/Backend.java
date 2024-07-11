@@ -16,7 +16,7 @@ public class Backend {
 
     public static String[] passKeeper;
     public static String firstLine = "";
-    public static String heightIncrease;
+
 
     public static boolean Setup(){
         File file = new File("src/main/resources/data.txt");
