@@ -7,7 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import org.example.Backend.Backend;
+import org.example.Backend.Main;
 import org.example.Backend.EncryptionV2;
 import org.example.Backend.Log;
 import org.example.Misc.View;
@@ -33,12 +33,12 @@ public class LoginController {
     @FXML
     public void handleButtonAction(ActionEvent event) throws IOException {
         EncryptionV2.Encode("Password");
-        if (Backend.Authenticate(passwordBox.getText())){
+        if (Main.Authenticate(passwordBox.getText())){
             System.out.println("Works");
             incorrect.setVisible(false);
             System.out.println(passwordBox.getText());
             Log.LoggedIn();
-            Backend.Reader();
+            Main.Reader();
             passKeeperController.onPassKeeper();
 
 

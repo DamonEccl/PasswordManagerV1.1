@@ -6,7 +6,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-import org.example.Backend.Backend;
+import org.example.Backend.Main;
 import org.example.Misc.View;
 import org.example.Misc.ViewSwitcher;
 
@@ -22,7 +22,7 @@ public class Controller extends Application {
         ViewSwitcher.setStage(stage);
         stage.sizeToScene();
 
-            if (!Backend.Setup()) {
+            if (!Main.Setup()) {
                 ViewSwitcher.switchTo(View.LOGIN);
             }
             else{

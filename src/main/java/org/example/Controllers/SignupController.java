@@ -4,8 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
-import javafx.scene.layout.Pane;
-import org.example.Backend.Backend;
+import org.example.Backend.Main;
 import org.example.Misc.View;
 import org.example.Misc.ViewSwitcher;
 
@@ -44,8 +43,8 @@ public class SignupController {
             if (requirments == 0) {
                 if (first.equals(confirmed)) {
                     correct.setVisible(true);
-                    Backend.setPassword(first);
-                    Backend.Reader();
+                    Main.setPassword(first);
+                    Main.Reader();
                     passKeeperController.onPassKeeper();
                 }
                 else {

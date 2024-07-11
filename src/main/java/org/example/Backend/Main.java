@@ -11,7 +11,7 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 
-public class Backend {
+public class Main {
 
 
     public static String[] passKeeper;
